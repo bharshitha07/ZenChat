@@ -1,0 +1,118 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Times New Roman', Times, serif;
+}
+
+body{
+  background:black;
+  color:white;
+  min-height:100vh;
+}
+
+.premium-page{
+  width:100%;
+  min-height:100vh;
+  padding:60px 20px;
+}
+
+.top-section{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.top-section h1{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+.top-section p{
+  font-size:20px;
+  opacity:0.8;
+}
+
+.plans-container{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.premium-card{
+  width:350px;
+  background:white;
+  color:black;
+  border-radius:25px;
+  padding:35px;
+  text-align:center;
+}
+
+.plus-card{
+  border:3px solid #2563eb;
+}
+
+.pro-card{
+  border:3px solid #9333ea;
+}
+
+.premium-card h2{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.premium-card h3{
+  color:#2563eb;
+  margin-bottom:25px;
+  font-size:30px;
+}
+
+.premium-card ul{
+  list-style:none;
+  text-align:left;
+  margin-bottom:30px;
+}
+
+.premium-card ul li{
+  margin-bottom:14px;
+  font-size:18px;
+}
+
+.premium-card button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  background:#2563eb;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.back-btn-box{
+  margin-top:40px;
+  text-align:center;
+}
+
+.back-btn-box button{
+  padding:14px 30px;
+  border:none;
+  border-radius:14px;
+  background:white;
+  color:black;
+  font-size:18px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .top-section h1{
+    font-size:40px;
+  }
+
+  .premium-card{
+    width:100%;
+    max-width:360px;
+  }
+
+}
