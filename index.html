@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ZenChat</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+<!-- AUTH PAGE -->
+
+<div
+  class="auth-page"
+  id="authPage"
+>
+
+  <!-- LOGIN -->
+
+  <div
+    class="auth-box"
+    id="loginBox"
+  >
+
+    <h1>ZenChat</h1>
+
+    <p>Login to continue</p>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Enter Email"
+    >
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Enter Password"
+    >
+
+    <button id="loginBtn">
+      Login
+    </button>
+
+    <button id="googleLoginBtn">
+
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+        class="google-icon"
+      >
+
+      Continue with Google
+
+    </button>
+
+    <p class="switch-text">
+
+      Don't have account?
+
+      <span id="openSignup">
+        Sign Up
+      </span>
+
+    </p>
+
+  </div>
+
+
+  <!-- SIGNUP -->
+
+  <div
+    class="auth-box"
+    id="signupBox"
+    style="display:none;"
+  >
+
+    <h1>Create Account</h1>
+
+    <input
+      type="text"
+      id="signupName"
+      placeholder="Enter Username"
+    >
+
+    <input
+      type="email"
+      id="signupEmail"
+      placeholder="Enter Email"
+    >
+
+    <input
+      type="password"
+      id="signupPassword"
+      placeholder="Create Password"
+    >
+
+    <button id="signupBtn">
+      Register
+    </button>
+
+    <p class="switch-text">
+
+      Already have account?
+
+      <span id="openLogin">
+        Login
+      </span>
+
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- MAIN APP -->
+
+<div
+  class="main-app"
+  id="mainApp"
+>
+
+  <!-- HISTORY -->
+
+  <div
+    class="history-panel"
+    id="historyPanel"
+  >
+
+    <button id="toggleHistoryBtn">
+      ☰
+    </button>
+
+    <div id="historyList"></div>
+    <div class="premium-box">
+
+  <h3>ZenChat Premium</h3>
+
+  <p>Unlock advanced features</p>
+
+  <a href="premium.html">
+
+  <button id="goProBtn">
+    Go Pro ⭐
+  </button>
+
+</a>
+
+</div>
+
+    <button id="clearHistoryBtn">
+      Clear History
+    </button>
+
+  </div>
+
+
+  <!-- CHAT -->
+
+  <div class="chat-container">
+
+    <div class="chat-header">
+
+      <h1>ZenChat</h1>
+
+      <p>Let's talk something new 😊</p>
+
+      <button id="shareBtn">
+        ⤴
+      </button>
+
+      <button id="logoutBtn">
+        Logout
+      </button>
+
+    </div>
+
+
+    <!-- CHAT BOX -->
+
+    <div
+      class="chat-box"
+      id="chatBox">
+    </div>
+
+
+    <!-- INPUT AREA -->
+
+    <div class="input-area">
+
+      <!-- TEXT BAR -->
+
+      <div class="textbar-container">
+
+
+        <!-- FILE BUTTON -->
+
+        <div class="upload-wrapper">
+
+          <button id="galleryBtn">
+
+            <div class="layout-icon">
+
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+
+            </div>
+
+          </button>
+
+
+          <!-- MENU -->
+
+          <div
+            class="upload-menu"
+            id="uploadMenu"
+          >
+
+            <label for="imageUpload">
+              🖼 Images
+            </label>
+
+            <label for="videoUpload">
+              🎬 Videos
+            </label>
+
+            <label for="fileUpload">
+              📁 Files
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+
+        <textarea
+          id="userInput"
+          placeholder="Type your question..."
+        ></textarea>
+
+
+        <!-- MIC -->
+
+        <button id="micBtn">
+          ⌁
+        </button>
+
+        <button id="sendBtn">
+          ➜
+        </button>
+
+      </div>
+
+
+      <!-- FILE INPUTS -->
+
+      <input
+        type="file"
+        id="imageUpload"
+        accept="image/*"
+        hidden
+      >
+
+      <input
+        type="file"
+        id="videoUpload"
+        accept="video/*"
+        hidden
+      >
+
+      <input
+        type="file"
+        id="fileUpload"
+        hidden
+      >
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<!-- PREMIUM POPUP -->
+
+<div
+  class="premium-popup"
+  id="premiumPopup"
+>
+
+  <div class="premium-popup-content">
+
+    <h2>Upgrade ZenChat</h2>
+
+    <p>Select Your Plan</p>
+
+    <button onclick="buyPlan('plus')">
+
+      Buy Plus ₹99
+
+    </button>
+
+    <button onclick="buyPlan('pro')">
+
+      Buy Pro ₹299
+
+    </button>
+
+    <button id="closePopup">
+
+      Cancel
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- MAIN JS -->
+
+<script src="script.js"></script>
+<footer style="text-align:center; padding:20px; margin-top:30px;">
+  
+  <p>Email: support@gmail.com</p>
+  <p>Contact: +91 9876543210</p>
+
+  <a href="https://zen-chat-ruddy.vercel.app/Policies.pdf" target="_blank">
+    Terms & Privacy Policy
+  </a>
+
+</footer>
+
+</body>
+
+</html>
